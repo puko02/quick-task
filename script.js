@@ -1,0 +1,32 @@
+// Toggle Theme
+const themeToggle = document.getElementById('theme');
+themeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('light');
+});
+
+// Login Button Event Listener
+const loginButton = document.getElementById('login-button');
+loginButton.addEventListener('click', async () => {
+  const email = document.getElementById('email').value;
+
+  if (!email) {
+    alert('Please enter your email');
+    return;
+  }
+
+  try {
+    const response = await fetch('https://api.postman.com/endpoint', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await response.json();
+    alert(`Response: ${JSON.stringify(data)}`);
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Failed to log in.');
+  }
+});
