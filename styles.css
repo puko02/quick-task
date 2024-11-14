@@ -1,25 +1,23 @@
 /* Global Styles */
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #c1a8fc;
-  }
-  
-  .container {
-    text-align: center;
-    width: 100%;
+  font-family: "Sour Gummy", sans-serif;
+    background-color: #A67AFF;
   }
   
   .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #7b4bf6;
+    background-color: #5500FF;
     color: white;
   }
   
@@ -31,46 +29,55 @@ body {
   .theme-toggle label {
     margin-right: 10px;
   }
-  
+
   .login-box {
-    background-color: #d4c3ff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
   }
   
   .title {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #5e4c99;
-    margin-bottom: 10px;
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: -3px;
+    color: white;
+    text-shadow: 5px 7px 6px rgba(0,0,0, .6);
   }
   
   .subtitle {
-    font-size: 1em;
-    margin-bottom: 20px;
-    color: #6b618a;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 4px 7px rgba(0,0,0, .5);
   }
   
   .input-field {
-    width: 80%;
-    padding: 10px;
+    font-family: "Sour Gummy", sans-serif;
+    width: 40%;
+    padding: .7rem 1rem;
     font-size: 1em;
     border-radius: 20px;
     border: none;
     outline: none;
     margin-bottom: 20px;
+    box-shadow: 3px 4px 7px rgba(0,0,0, .5);
   }
   
   .button {
-    background-color: #7b4bf6;
-    color: white;
-    font-size: 1em;
-    padding: 10px 20px;
+    width: 10rem;
+    text-align: center;
+    background-color: white;
+    font-size: 1rem;
+    padding: 5px 20px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 3px 4px 7px rgba(0,0,0, .5);
   }
   
   .button:hover {
