@@ -36,8 +36,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
   }
   
   .title {
@@ -84,18 +82,34 @@ body {
     background-color: #5630cc;
     color: white;
   }
-  
-  /* Light Theme */
-  body.light {
-    background-color: #ffffff;
+
+  @keyframes changeColor-loginBox-light{
+    from{
+      background-color: transparent;
+    }to{
+           background-color: #473962;
+         }
   }
+@keyframes changeColor-navbar-light{
+  from{
+    background-color: #5500FF;
+  }to{
+     background-color: #4E1DB0;
+   }
+}
+
+
+
+
+  /* Light Theme */
   
   body.light .login-box {
+    animation: changeColor-loginBox-light 1s forwards ease-in-out;
     background-color: #473962;
   }
 
 body.light .navbar {
-  background-color: #4E1DB0;
+  animation: changeColor-navbar-light 1s forwards ease-in-out;
 }
   
   body.light .title {
