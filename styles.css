@@ -37,6 +37,8 @@ body {
   .logo {
     font-size: 1.5em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
   }
   
   .theme-toggle label {
@@ -70,6 +72,7 @@ body {
   .input-field {
     font-family: "Sour Gummy", sans-serif;
     width: 40%;
+    min-width: 20rem;
     padding: .7rem 1rem;
     font-size: 1em;
     border-radius: 20px;

@@ -15,7 +15,7 @@ loginButton.addEventListener('click', async () => {
   }
 
   try {
-    const response = await fetch('https://api.postman.com/endpoint', {
+    const response = await fetch('http://localhost:3001/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
