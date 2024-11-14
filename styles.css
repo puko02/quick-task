@@ -7,7 +7,21 @@ body {
   font-family: "Sour Gummy", sans-serif;
     background-color: #A67AFF;
   }
-  
+
+@keyframes changeColor-loginBox-noLight{
+  from{
+    background-color: #473962;
+  }to{
+       background-color: transparent;
+   }
+}
+@keyframes changeColor-navbar-noLight{
+  from{
+    background-color: #4E1DB0;
+  }to{
+       background-color: #5500FF;
+   }
+}
   .navbar {
     position: fixed;
     top: 0;
@@ -17,7 +31,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #5500FF;
+    animation: changeColor-navbar-noLight .5s forwards ease-in-out;
     color: white;
   }
   
@@ -36,6 +50,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: changeColor-loginBox-noLight .5s forwards ease-in-out;
   }
   
   .title {
@@ -83,7 +98,8 @@ body {
     color: white;
   }
 
-  @keyframes changeColor-loginBox-light{
+
+@keyframes changeColor-loginBox-light{
     from{
       background-color: transparent;
     }to{
@@ -104,12 +120,12 @@ body {
   /* Light Theme */
   
   body.light .login-box {
-    animation: changeColor-loginBox-light 1s forwards ease-in-out;
+    animation: changeColor-loginBox-light .5s forwards ease-in-out;
     background-color: #473962;
   }
 
 body.light .navbar {
-  animation: changeColor-navbar-light 1s forwards ease-in-out;
+  animation: changeColor-navbar-light .5s forwards ease-in-out;
 }
   
   body.light .title {
