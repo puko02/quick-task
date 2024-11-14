@@ -82,6 +82,7 @@ body {
   
   .button:hover {
     background-color: #5630cc;
+    color: white;
   }
   
   /* Light Theme */
@@ -90,14 +91,18 @@ body {
   }
   
   body.light .login-box {
-    background-color: #e8e8e8;
+    background-color: #473962;
   }
+
+body.light .navbar {
+  background-color: #4E1DB0;
+}
   
   body.light .title {
-    color: #333333;
+    color: white;
   }
   
   body.light .subtitle {
-    color: #555555;
+    color: white;
   }
   
