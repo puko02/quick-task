@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Sour Gummy", sans-serif;
+    background-color: #A67AFF;
+  }
+
+@keyframes changeColor-loginBox-noLight{
+  from{
+    background-color: #473962;
+  }to{
+       background-color: transparent;
+   }
+}
+@keyframes changeColor-navbar-noLight{
+  from{
+    background-color: #4E1DB0;
+  }to{
+       background-color: #5500FF;
+   }
+}
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    animation: changeColor-navbar-noLight .5s forwards ease-in-out;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-toggle label {
+    margin-right: 10px;
+  }
+
+  .login-box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: changeColor-loginBox-noLight .5s forwards ease-in-out;
+  }
+  
+  .title {
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: -3px;
+    color: white;
+    text-shadow: 5px 7px 6px rgba(0,0,0, .6);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 4px 7px rgba(0,0,0, .5);
+  }
+  
+  .input-field {
+    font-family: "Sour Gummy", sans-serif;
+    width: 40%;
+    min-width: 20rem;
+    padding: .7rem 1rem;
+    font-size: 1em;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    box-shadow: 3px 4px 7px rgba(0,0,0, .5);
+  }
+  
+  .button {
+    width: 10rem;
+    text-align: center;
+    background-color: white;
+    font-size: 1rem;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 3px 4px 7px rgba(0,0,0, .5);
+  }
+  
+  .button:hover {
+    background-color: #5630cc;
+    color: white;
+  }
+
+
+@keyframes changeColor-loginBox-light{
+    from{
+      background-color: transparent;
+    }to{
+           background-color: #473962;
+         }
+  }
+@keyframes changeColor-navbar-light{
+  from{
+    background-color: #5500FF;
+  }to{
+     background-color: #4E1DB0;
+   }
+}
+
+
+
+
+  /* Light Theme */
+  
+  body.light .login-box {
+    animation: changeColor-loginBox-light .5s forwards ease-in-out;
+    background-color: #473962;
+  }
+
+body.light .navbar {
+  animation: changeColor-navbar-light .5s forwards ease-in-out;
+}
+  
+  body.light .title {
+    color: white;
+  }
+  
+  body.light .subtitle {
+    color: white;
+  }
+  
