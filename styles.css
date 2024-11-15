@@ -42,7 +42,45 @@ body {
   }
   
   .theme-toggle label {
-    margin-right: 10px;
+    margin-right: 3px;
+  }
+  
+  #light-dark{
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+
+  #theme {
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #eee;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(7px);
+    transition: all 0.5s ease-in;
+  }
+
+  #theme:checked {
+    background-color: #351165;
+  }
+
+  #theme::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: 1s;
+  }
+
+  #theme:checked::before {
+    transition: 1s;
+    left: 25px;
+    background-color: #eee;
   }
 
   .login-box {
@@ -137,4 +175,3 @@ body.light .navbar {
   body.light .subtitle {
     color: white;
   }
-  
