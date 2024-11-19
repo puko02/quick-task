@@ -53,6 +53,12 @@ body {
     justify-content: center;
     animation: changeColor-loginBox-noLight .5s forwards ease-in-out;
   }
+  .login-box a:visited{
+    color: #5454fc;
+  }
+.login-box a:active{
+  color: #0000ad;
+}
   
   .title {
     font-size: 5rem;
@@ -85,6 +91,7 @@ body {
   .button {
     width: 10rem;
     text-align: center;
+    margin-bottom: 10px;
     background-color: white;
     font-size: 1rem;
     padding: 5px 20px;

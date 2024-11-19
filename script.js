@@ -14,19 +14,22 @@ loginButton.addEventListener('click', async () => {
     return;
   }
 
-  try {
-    const response = await fetch('http://localhost:3001/emails', {
-      method: 'POST',
+  await fetch('http://localhost:3001/emails', {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email }),
-    });
-
-    const data = await response.json();
-    alert(`Response: ${JSON.stringify(data)}`);
-  } catch (error) {
-    console.error('Error:', error);
-    alert('Failed to log in.');
-  }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const check_email = data.some((item) => item.email === email)
+        if(check_email){
+          alert(`this account ${email} exist`);
+        }else{
+          alert(`this account ${email} not exist`);
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
 });
