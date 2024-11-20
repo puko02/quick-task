@@ -2,6 +2,7 @@
 const themeToggle = document.getElementById('theme');
 themeToggle.addEventListener('change', () => {
   document.body.classList.toggle('light');
+  document.getElementById("light-dark").innerHTML = document.body.classList.contains('light') ? "Dark" : "Light";
 });
 
 // Login Button Event Listener
