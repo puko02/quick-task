@@ -6,6 +6,7 @@ themeToggle.addEventListener('change', () => {
 });
 
 // Login Button Event Listener
+function searchUser(){
 const loginButton = document.getElementById('login-button');
 loginButton.addEventListener('click', async () => {
   const email = document.getElementById('email').value;
@@ -34,3 +35,5 @@ loginButton.addEventListener('click', async () => {
         console.error(err)
       })
 });
+}
+
