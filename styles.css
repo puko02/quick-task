@@ -4,8 +4,10 @@
 }
 body {
   font-family: "Sour Gummy", sans-serif;
-    background-color: #A67AFF;
-  }
+  background-color: #A67AFF;
+  margin: 0;
+  padding: 0;
+}
 
 @keyframes changeColor-loginBox-noLight{
   from{
@@ -32,11 +34,21 @@ body {
     padding: 10px 20px;
     animation: changeColor-navbar-noLight .5s forwards ease-in-out;
     color: white;
+    background-color: #4E1DB0;
   }
   
   .logo {
     font-size: 1.5em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    margin-right: 10px;
+  }
+
+  .theme-toggle {
     display: flex;
     align-items: center;
   }
@@ -47,7 +59,7 @@ body {
   
   #light-dark{
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   #theme {
@@ -154,8 +166,119 @@ body {
    }
 }
 
+  .board-container {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px 20px;
+  }
 
+  .board {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+  }
 
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .board-title {
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 2px solid #0079bf;
+    outline: none;
+    width: 70%;
+  }
+
+  .delete-board {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .lists {
+    display: flex;
+    gap: 20px;
+  }
+
+  .list {
+    background-color: #e2e4e6;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+  }
+
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .list-title {
+    font-size: 1.2em;
+    border: none;
+    border-bottom: 2px solid #0079bf;
+    outline: none;
+    width: 70%;
+  }
+
+  .delete-list {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-content {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  .delete-card {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .add-card, .add-list {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 
   /* Light Theme */
   
@@ -166,6 +289,7 @@ body {
 
 body.light .navbar {
   animation: changeColor-navbar-light .5s forwards ease-in-out;
+  background-color: #5500FF;
 }
   
   body.light .title {
@@ -174,4 +298,32 @@ body.light .navbar {
   
   body.light .subtitle {
     color: white;
+  }
+
+  body.light .board {
+    background-color: #f4f4f4;
+  }
+
+  body.light .list {
+    background-color: #ffffff;
+  }
+
+  body.light .card {
+    background-color: #f9f9f9;
+  }
+
+  body.light .board-title,
+  body.light .list-title {
+    border-bottom-color: #5500FF;
+  }
+
+  body.light .delete-board,
+  body.light .delete-list,
+  body.light .delete-card {
+    background-color: #ff4d4d;
+  }
+
+  body.light .add-card,
+  body.light .add-list {
+    background-color: #66bb6a;
   }

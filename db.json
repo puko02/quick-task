@@ -1,5 +1,9 @@
 {
   "emails": [
-
+    {
+      "id": "novoId",
+      "email": "user1@example.com"
+    }
+    
   ]
 }
