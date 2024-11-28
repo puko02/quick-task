@@ -259,14 +259,14 @@ body.dark .subtitle{
   font-size: 5rem;
   font-weight: normal;
   letter-spacing: -3px;
-  color: #110627;
+  color: #ffffff;
   text-shadow: 5px 7px 6px rgba(0,0,0, .6);
 }
 
 .subtitle {
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: #110627;
+  color: #ffffff;
   text-shadow: 0 4px 7px rgba(0,0,0, .5);
 }
 
