@@ -1,8 +1,8 @@
 // Toggle Theme
 const themeToggle = document.getElementById('theme');
 themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light');
-  document.getElementById("light-dark").innerHTML = document.body.classList.contains('light') ? "Dark" : "Light";
+  document.body.classList.toggle('dark');
+  document.getElementById("Dark-mode").innerHTML = document.body.classList.contains('Dark Mode');
 });
 
 // Login Button Event Listener
