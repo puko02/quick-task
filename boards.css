@@ -1,0 +1,138 @@
+/* Board Selector */
+.board-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #board-dropdown {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  #add-board {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Container do quadro */
+  .board-container {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px 20px;
+  }
+  
+  .board {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    color: #000;
+  }
+  
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .board-title {
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 2px solid #0079bf;
+    outline: none;
+    width: 70%;
+  }
+  
+  .delete-board {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .lists {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .list {
+    background-color: #e2e4e6;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .list-title {
+    font-size: 1.2em;
+    border: none;
+    border-bottom: 2px solid #0079bf;
+    outline: none;
+    width: 70%;
+  }
+  
+  .delete-list {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+  
+  .delete-card {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .add-card, .add-list {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
