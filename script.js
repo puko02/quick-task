@@ -1,18 +1,27 @@
-// Toggle Theme
-const themeToggle = document.getElementById('theme');
-themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('dark');
-  document.getElementById("Dark-mode").innerHTML = document.body.classList.contains('Dark Mode');
-});
-
-// Login Button Event Listener
 document.addEventListener('DOMContentLoaded', () => {
+  // Toggle Theme
+  const themeToggle = document.getElementById('theme');
+  if (themeToggle) {
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+      document.getElementById("Dark-mode").innerHTML = document.body.classList.contains('Dark Mode');
+    });
+  } else {
+    console.error('Elemento theme não encontrado');
+  }
+
   const loginButton = document.getElementById('login-button');
   if (loginButton) {
     loginButton.addEventListener('click', handleLogin);
   } else {
     console.error('Elemento login-button não encontrado');
   }
+
+  const clickEnter = addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      handleLogin();
+  }
+});
 
   async function handleLogin() {
     const email = document.getElementById('email').value;
@@ -51,10 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Failed to log in.');
     }
   }
-});
 
-// Board Management
-document.addEventListener('DOMContentLoaded', () => {
+  // Board Management
   const boardDropdown = document.getElementById('board-dropdown');
   const addBoardButton = document.getElementById('add-board');
   const board = document.querySelector('.board');
