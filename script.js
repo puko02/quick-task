@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email').value;
 
     if (!email) {
-      alert('Please enter your email');
+      alert('Por favor, insira um email');
       return;
     }
 
@@ -39,9 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (emailExists) {
         window.location.href = 'trelofake.html';
         return;
+      } else {
+        const showError = document.getElementById('error');
+        showError.innerHTML = "Email não encontrado, verifique seu gmail e tente novamente";
       }
 
-      const addResponse = await fetch('http://localhost:3001/emails', {
+      // Criação de um novo email - ATUALMENTE DESATIVADO
+     /* const addResponse = await fetch('http://localhost:3001/emails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'trelofake.html';
       } else {
         alert('Erro ao criar o email');
-      }
+      } */
     } catch (error) {
       console.error('Error:', error);
       alert('Failed to log in.');

@@ -39,16 +39,24 @@
     width: 10rem;
     text-align: center;
     background-color: white;
-    font-size: 1rem;
+    font-size: 1.12rem;
     padding: 5px 20px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     box-shadow: 3px 4px 7px rgba(0,0,0, .5);
+    font-family: "Sour Gummy", sans-serif;
   }
   
   .button:hover {
     background-color: #5630cc;
     color: white;
+  }
+
+  .pError {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0, 1);
   }

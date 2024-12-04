@@ -27,6 +27,7 @@ body {
   padding: 10px 20px;
   background-color: #5500FF;/*#4E1DB0;*/
   color: white;
+  box-shadow: 0 0 1rem rgba(1, 1, 1, 1.1);
 }
 
 .logo {
@@ -160,4 +161,17 @@ body.dark .subtitle{
 .button:hover {
   background-color: #5630cc;
   color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-shadow: 4px 4px 8px rgba(0,0,0, 0.75);
+}
+
+.userSet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  text-shadow: 3px 3px 5px rgba(0,0,0, 1);
 }
