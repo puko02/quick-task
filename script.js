@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://personal-ga2xwx9j.outsystemscloud.com/TaskBoard';
+import { API_BASE_URL } from '/apiconfig.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Toggle Theme
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const clickEnter = addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
       handleLogin();
-  }
-});
+    }
+  });
 
   await loadBoards();
 
@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
       const response = await fetch(`${API_BASE_URL}/People`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const people = await response.json();
       
       const userExists = people.some(person => person.Email.toLowerCase() === email.toLowerCase());
