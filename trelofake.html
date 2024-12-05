@@ -27,28 +27,14 @@
       <label for="theme" id="dark-mode"></label>
       <input type="checkbox" id="theme" />
     </div>
-
-    <div class="board-selector">
-      <select id="board-dropdown">
-        <option value="">Selecione um Quadro</option>
-      </select>
-      <button id="add-board">Adicionar Quadro</button>
-    </div>
+  </div>
+  
+  <div class="boards-container">
+    <h2>Seus Quadros</h2>
+    <div id="boards-grid"></div>
+    <button id="add-board" class="button">+ Novo Quadro</button>
   </div>
 
-  <div class="board-container">
-    <div class="board">
-      <div class="board-header">
-        <input type="text" class="board-title" placeholder="Nome do Quadro">
-        <button class="delete-board">Apagar Quadro</button>
-      </div>
-      <div class="lists">
-        <!-- As listas serão adicionadas aqui -->
-      </div>
-      <button class="add-list">Adicionar Lista</button>
-    </div>
-  </div>
-
-  <script src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </body>
 </html>
