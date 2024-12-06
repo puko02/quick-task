@@ -1,7 +1,6 @@
 import { API_BASE_URL } from '/apiconfig.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Toggle Theme
   const themeToggle = document.getElementById('theme');
   if (themeToggle) {
     themeToggle.addEventListener('change', () => {
@@ -25,7 +24,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  await loadBoards();
+  const userBoardsDropdown = document.getElementById('user-boards-dropdown');
+  if (userBoardsDropdown) {
+    userBoardsDropdown.addEventListener('change', async () => {
+      const boardId = userBoardsDropdown.value;
+      if (boardId) {
+        await loadBoardById(boardId);
+      } else {
+        document.getElementById('board-details').innerHTML = '';
+      }
+    });
+  }
+
+  await loadUserBoards();
 
   async function handleLogin() {
     const email = document.getElementById('email').value;
@@ -36,13 +47,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/People`);
+      const response = await fetch(`${API_BASE_URL}/GetPersonByEmail?Email=${encodeURIComponent(email)}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const people = await response.json();
-      
-      const userExists = people.some(person => person.Email.toLowerCase() === email.toLowerCase());
+      const userExists = await response.json();
 
       if (userExists) {
         window.location.href = 'trelofake.html';
@@ -56,6 +65,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 });
+
+async function loadUserBoards() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/Boards`);
+    const boards = await response.json();
+
+    const userBoardsDropdown = document.getElementById('user-boards-dropdown');
+    userBoardsDropdown.innerHTML = '<option value="">Selecione um quadro</option>';
+
+    boards.forEach(board => {
+      const option = document.createElement('option');
+      option.value = board.Id;
+      option.textContent = board.Name;
+      userBoardsDropdown.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Erro ao carregar os quadros do usuário:', error);
+  }
+}
+
+async function loadBoardById(boardId) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/Board?BoardId=${boardId}`);
+    const board = await response.json();
+
+    const boardDetails = document.getElementById('board-details');
+    boardDetails.innerHTML = '';
+
+    const boardElement = document.createElement('div');
+    boardElement.className = 'board-card';
+    boardElement.style.backgroundColor = board.HexaBackgroundCoor || '#ffffff';
+
+    boardElement.innerHTML = `
+      <h3>${board.Name}</h3>
+      <p>${board.Description || 'Sem descrição'}</p>
+    `;
+
+    boardDetails.appendChild(boardElement);
+  } catch (error) {
+    console.error('Erro ao carregar o quadro:', error);
+  }
+}
 
 async function loadBoards() {
   try {
@@ -90,8 +141,28 @@ async function loadBoards() {
 // Adicionar listener para o botão de novo quadro
 const addBoardButton = document.getElementById('add-board');
 if (addBoardButton) {
-  addBoardButton.addEventListener('click', () => {
-    // Aqui você pode adicionar a lógica para criar um novo board
-    console.log('Novo quadro clicked');
+  addBoardButton.addEventListener('click', async () => {
+    const boardName = prompt('Digite o nome do novo quadro:');
+    if (boardName) {
+      try {
+        const response = await fetch(`${API_BASE_URL}/Boards`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ Name: boardName })
+        });
+
+        if (!response.ok) {
+          throw new Error('Erro ao criar o quadro');
+        }
+
+        const newBoard = await response.json();
+        console.log('Novo quadro criado:', newBoard);
+        await loadBoards(); // Recarregar os quadros após a criação
+      } catch (error) {
+        console.error('Erro ao criar o quadro:', error);
+      }
+    }
   });
 }

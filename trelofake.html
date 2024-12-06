@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quick Task</title>
   <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./boards.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
@@ -27,11 +26,15 @@
       <label for="theme" id="dark-mode"></label>
       <input type="checkbox" id="theme" />
     </div>
+
+    <select id="user-boards-dropdown" class="dropdown">
+      <option value="">Selecione um quadro</option>
+    </select>
   </div>
-  
+
   <div class="boards-container">
     <h2>Seus Quadros</h2>
-    <div id="boards-grid"></div>
+    <div id="board-details"></div>
     <button id="add-board" class="button">+ Novo Quadro</button>
   </div>
 
