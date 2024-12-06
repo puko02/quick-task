@@ -19,23 +19,30 @@
 
     <div class="user">
       <p id="userSet"></p>
+      <span id="userEmail"></span>
     </div>
+
+    <select id="user-boards-dropdown" class="dropdown">
+      <option value="">Selecione um quadro</option>
+    </select>
+
+    <button id="create-board" class="nav-button">+ Novo Quadro</button>
+    <button id="delete-board" class="nav-button danger">Excluir Quadro</button>
 
     <div class="theme-toggle">
       <label for="theme">Dark Mode</label>
       <label for="theme" id="dark-mode"></label>
       <input type="checkbox" id="theme" />
     </div>
-
-    <select id="user-boards-dropdown" class="dropdown">
-      <option value="">Selecione um quadro</option>
-    </select>
   </div>
 
   <div class="boards-container">
-    <h2>Seus Quadros</h2>
-    <div id="board-details"></div>
-    <button id="add-board" class="button">+ Novo Quadro</button>
+    <h2 id="current-board-name">Nome do Quadro</h2>
+    <div class="board-content">
+      <div class="columns-container" id="columns-container">
+      </div>
+      <button id="add-column" class="button">+ Nova Lista</button>
+    </div>
   </div>
 
   <script type="module" src="./script.js"></script>
